@@ -41,65 +41,79 @@ public class Jogo {
 
     public void escolherJogador() {
 
-        int opcao = InOut.leInt(
-            "Escolha seu personagem:\n"
-            + "1 - Soldado\n"
-            + "2 - General\n"
-            + "3 - Lutador de Sumô\n"
-            + "4 - Mago\n"
-            + "5 - Dragão Alado"
-        );
-
+        String opcao;
+        
+        try{
+            
+            opcao = InOut.leString("""
+                                          Escolha seu personagem:
+                                          1 - Soldado
+                                          2 - General
+                                          3 - Lutador de Sum\u00f4
+                                          4 - Mago
+                                          5 - Drag\u00e3o Alado""");
+            
+            if(opcao.matches("\\d+"))
+            {
+                throw new excecaoLetra();
+            }
+            
+            
+        }catch(excecaoLetra escolhaInvalida){
+        
+        }
+        
+        
+        
+        
         switch (opcao) {
 
-            case 1:
+            case 1 -> {
                 jogador = new Soldado();
 
                 InOut.MsgDeInformacao(
-                    "Personagem",
-                    "Você escolheu o Soldado!"
+                        "Personagem",
+                        "Você escolheu o Soldado!"
                 );
-                break;
+            }
 
-            case 2:
+            case 2 -> {
                 jogador = new General();
 
                 InOut.MsgDeInformacao(
-                    "Personagem",
-                    "Você escolheu o General!"
+                        "Personagem",
+                        "Você escolheu o General!"
                 );
-                break;
+            }
 
-            case 3:
+            case 3 -> {
                 jogador = new LutSUMO();
 
                 InOut.MsgDeInformacao(
-                    "Personagem",
-                    "Você escolheu o Lutador de Sumô!"
+                        "Personagem",
+                        "Você escolheu o Lutador de Sumô!"
                 );
-                break;
+            }
 
-            case 4:
+            case 4 -> {
                 jogador = new Mago();
 
                 InOut.MsgDeInformacao(
-                    "Personagem",
-                    "Você escolheu o Mago!"
+                        "Personagem",
+                        "Você escolheu o Mago!"
                 );
-                break;
+            }
 
-            case 5:
+            case 5 -> {
                 jogador = new DragaoAlado();
 
                 InOut.MsgDeInformacao(
-                    "Personagem",
-                    "Você escolheu o Dragão Alado!"
+                        "Personagem",
+                        "Você escolheu o Dragão Alado!"
                 );
-                break;
+            }
 
-            default:
-
-                InOut.MsgDeInformacao(
+            default -> InOut.MsgDeInformacao(
                     "Erro",
                     "Opção inválida!"
                 );

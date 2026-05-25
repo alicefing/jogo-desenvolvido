@@ -8,6 +8,12 @@ package Jogo;
  *
  * @author alicefingiro
  */
-public class MinhaExcecao extends Exception {
+public class excecaoLetra extends Exception {
     
+    @Override
+    public String toString(){
+        
+        return "Digite um número da sua escolha";
+        
+    }
 }
