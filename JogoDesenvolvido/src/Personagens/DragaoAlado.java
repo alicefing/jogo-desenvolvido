@@ -18,4 +18,6 @@ public class DragaoAlado extends Personagem implements Voador{
     public void voar(){
         System.out.println("Batendo minhas asas");
     }
+    
+    
 }
