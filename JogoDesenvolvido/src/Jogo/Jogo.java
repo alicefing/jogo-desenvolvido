@@ -41,28 +41,14 @@ public class Jogo {
 
     public void escolherJogador() {
 
-        String opcao;
-        
-        try{
-            
-            opcao = InOut.leString("""
-                                          Escolha seu personagem:
-                                          1 - Soldado
-                                          2 - General
-                                          3 - Lutador de Sum\u00f4
-                                          4 - Mago
-                                          5 - Drag\u00e3o Alado""");
-            
-            if(opcao.matches("\\d+"))
-            {
-                throw new excecaoLetra();
-            }
-            
-            
-        }catch(excecaoLetra escolhaInvalida){
-        
-        }
-        
+         int opcao = InOut.leInt(
+            "Escolha seu personagem:\n"
+            + "1 - Soldado\n"
+            + "2 - General\n"
+            + "3 - Lutador de Sumô\n"
+            + "4 - Mago\n"
+            + "5 - Dragão Alado"
+        );
         
         
         
