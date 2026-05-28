@@ -22,8 +22,6 @@ public abstract class Personagem {
     }
     
     public abstract void desenhar();
-    
-    public void falar(){};
-    
+  
     
 }

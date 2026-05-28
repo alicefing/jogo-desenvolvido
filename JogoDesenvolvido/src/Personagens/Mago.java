@@ -19,3 +19,5 @@ public class Mago extends Personagem implements Corredor {
         System.out.println("Correndo no chao");
     }
 }
+
+    
