@@ -2,13 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Personagens;
+package Personagens.Voador;
+
+import Personagens.Personagem;
+import Personagens.Habilidades.SoltaFogo;
+
 
 /**
  *
  * @author alicefingiro
  */
-public class DragaoAlado extends Personagem implements Voador{
+public class DragaoAlado extends Personagem implements Voador, SoltaFogo{
     
     public void desenhar(){
         System.out.println("Desenhando dragao");
@@ -19,5 +23,9 @@ public class DragaoAlado extends Personagem implements Voador{
         System.out.println("Batendo minhas asas");
     }
     
+    public void soltarBolaDeFogo(){
+        System.out.println("FOGO!");
+    }
+        
     
 }
