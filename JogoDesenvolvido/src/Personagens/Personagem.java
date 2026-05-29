@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Personagens;
-import Arma.Arma_IF;
+import Arma.Arma;
 
 /**
  *
@@ -11,13 +11,13 @@ import Arma.Arma_IF;
  */
 public abstract class Personagem {
     
-    protected Arma_IF arma;
+    protected Arma arma;
     
     public void arma(){
         arma.usarArma();
     };
     
-    public void setArma (Arma_IF arma){
+    public void setArma (Arma arma){
         this.arma = arma;
     }
     

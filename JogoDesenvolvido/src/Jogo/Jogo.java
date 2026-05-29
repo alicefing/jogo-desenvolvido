@@ -7,18 +7,18 @@ import Personagens.Mago;
 import Personagens.LutSUMO;
 import Personagens.DragaoAlado;
 
-import Arma.Arma_IF;
-import Arma.Faca;
-import Arma.Fogo;
-import Arma.Revolver;
-import Arma.Fuzil;
-import Arma.Magia;
+import Arma.Armafisica.Faca;
+import Arma.Armamistica.Fogo;
+import Arma.Armafisica.Revolver;
+import Arma.Armafisica.Fuzil;
+import Arma.Armamistica.Magia;
 import Arma.Desarmado;
+import Arma.Arma;
 
 public class Jogo {
 
     private Personagem jogador;
-    private Arma_IF arma;
+    private Arma arma;
     private int dano;
 
     public void historiaInicial() {

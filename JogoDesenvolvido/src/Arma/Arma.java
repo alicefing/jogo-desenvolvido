@@ -8,8 +8,16 @@ package Arma;
  *
  * @author alicefingiro
  */
-public interface Arma_IF {
+public abstract class Arma {
 
-   public void usarArma();
+   public String nome;
+   public int dano; 
+
+    public Arma() {
+    }
+
+   void usarArma(){
+       System.out.println("Usar arma");
+   }  
     
 }

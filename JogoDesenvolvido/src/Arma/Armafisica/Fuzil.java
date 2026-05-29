@@ -1,18 +1,20 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Arma;
+package Arma.Armafisica;
 
+import Arma.Armafisica.Armafisica;
 import Jogo.InOut;
 
 /**
  *
  * @author alicefingiro
  */
-public class Magia implements Arma_IF  {
+public class Fuzil extends Armafisica {
     
     public void usarArma(){
-        InOut.MsgDeInformacao("Ataque", "Olha a máaagica...");
-    }
+        InOut.MsgDeInformacao("Ataque", "Fuziiil BOOM");       
+    };
 }
