@@ -221,6 +221,7 @@ public class Jogo {
                 InOut.MsgDeInformacao(
                     "Erro",
                     "Você errou o ataque!"
+                    //o dragao voou 
                 );
 
             } else {

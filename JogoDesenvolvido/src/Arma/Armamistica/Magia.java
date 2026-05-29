@@ -13,6 +13,11 @@ import Jogo.InOut;
  */
 public class Magia extends Armamistica  {
     
+     public Magia(){
+        super("MAGIA", 50);
+    }
+    
+    
     public void usarArma(){
         System.out.println("magia");
     };

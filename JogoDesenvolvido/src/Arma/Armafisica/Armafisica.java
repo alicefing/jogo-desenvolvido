@@ -12,13 +12,11 @@ import Arma.Arma;
  */
 public abstract class Armafisica extends Arma{
 
-    public void setNome(String nome) {
-        this.nome = nome;
+     public Armafisica(String nome, int dano) {
+        super(nome, dano);
     }
-
-    public void setDano(int dano) {
-        this.dano = dano;
-    }
+     
+     
 
     
     

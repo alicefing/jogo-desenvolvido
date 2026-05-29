@@ -11,6 +11,10 @@ import Arma.Arma;
  * @author kaylane medice
  */
 public abstract class Armamistica extends Arma {
+    
+    public Armamistica(String nome, int dano) {
+        super(nome, dano);
+    }
 
     public void setNome(String nome) {
         this.nome = nome;

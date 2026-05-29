@@ -13,6 +13,10 @@ import Jogo.InOut;
  */
 public class Revolver extends Armafisica {
     
+        public Revolver(){
+        super("Revolver", 50);
+    }
+    
     public void usarArma(){
         InOut.MsgDeInformacao("Ataque", "Atirando puf puf");        
     };

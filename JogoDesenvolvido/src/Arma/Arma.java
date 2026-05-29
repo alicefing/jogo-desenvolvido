@@ -13,10 +13,13 @@ public abstract class Arma {
    public String nome;
    public int dano; 
 
-    public Arma() {
+    public Arma(String nome, int dano) {
+       this.nome = nome;
+       this.dano = dano;
     }
 
    void usarArma(){
+       //random
        System.out.println("Usar arma");
    }  
     
