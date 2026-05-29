@@ -4,11 +4,13 @@
  */
 package Arma;
 
+import Arma.Armafisica.Armafisica;
+
 /**
  *
  * @author alicefingiro
  */
-public class Desarmado implements Arma_IF {
+public class Desarmado extends Armafisica {
     
     public void usarArma(){
         System.out.println("Sem arma");        
