@@ -6,12 +6,13 @@ package Personagens.Terrestre;
 
 import Personagens.Personagem;
 import Personagens.Terrestre.Terrestre;
+import Personagens.Habilidades.Fala;
 
 /**
  *
  * @author alicefingiro
  */
-public class Soldado extends Personagem implements Terrestre {
+public class Soldado extends Personagem implements Terrestre, Fala {
     
     public void desenhar(){
         System.out.println("Desenhando Soldado");
@@ -19,5 +20,9 @@ public class Soldado extends Personagem implements Terrestre {
     
     public void correr(){
         System.out.println("Correndo no chao");
+    }
+    
+    public void falar(){
+        System.out.println("Eu sou o Soldado");
     }
 }

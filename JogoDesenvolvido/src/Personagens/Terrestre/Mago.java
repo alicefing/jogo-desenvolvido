@@ -8,12 +8,13 @@ import Personagens.Voador.Voador;
 import Personagens.Personagem;
 import Personagens.Terrestre.Terrestre;
 import Personagens.Habilidades.UsaMagia;
+import Personagens.Habilidades.Fala;
 
 /**
  *
  * @author alicefingiro
  */
-public class Mago extends Personagem implements Terrestre, Voador, UsaMagia{
+public class Mago extends Personagem implements Terrestre, Voador, UsaMagia, Fala{
     
     public void desenhar(){
         System.out.println("Desenhando mago");
@@ -32,7 +33,12 @@ public class Mago extends Personagem implements Terrestre, Voador, UsaMagia{
         System.out.println("Lancando magia");
     }
     
+    public void falar(){
+        System.out.println("Eu sou o Mago");
+    }
     
 }
+    
+
 
     
