@@ -12,6 +12,9 @@ import Jogo.InOut;
  */
 public class Fogo extends Armamistica {
     
+    public Fogo(){
+        super("Fogo", 50);
+    }
     
     public void usarArma(){
         InOut.MsgDeInformacao("Ataque", "Bola de fooogo");   

@@ -14,6 +14,10 @@ import Jogo.InOut;
  */
 public class Fuzil extends Armafisica {
     
+        public Fuzil(){
+        super("Fuzil", 50);
+    }
+    
     public void usarArma(){
         InOut.MsgDeInformacao("Ataque", "Fuziiil BOOM");       
     };

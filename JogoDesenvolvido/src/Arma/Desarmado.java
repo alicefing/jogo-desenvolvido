@@ -10,7 +10,11 @@ import Arma.Armafisica.Armafisica;
  *
  * @author alicefingiro
  */
-public class Desarmado extends Armafisica {
+public class Desarmado extends Arma{
+    
+    public Desarmado(){
+        super("Desarmado", 0);
+    }
     
     public void usarArma(){
         System.out.println("Sem arma");        

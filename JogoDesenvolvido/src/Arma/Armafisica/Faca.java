@@ -12,6 +12,10 @@ import Jogo.InOut;
  * @author alicefingiro
  */
 public class Faca extends Armafisica  {
+ 
+    public Faca(){
+        super("Faca", 50);
+    }
     
     public void usarArma(){
         InOut.MsgDeInformacao("Ataque", "Esfaqueando zip zip");
