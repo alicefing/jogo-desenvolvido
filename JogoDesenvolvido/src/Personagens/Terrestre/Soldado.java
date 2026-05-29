@@ -2,16 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Personagens;
+package Personagens.Terrestre;
+
+import Personagens.Personagem;
+import Personagens.Terrestre.Terrestre;
 
 /**
  *
  * @author alicefingiro
  */
-public class LutSUMO extends Personagem implements Corredor{
+public class Soldado extends Personagem implements Terrestre {
     
     public void desenhar(){
-        System.out.println("Desenhando LutSumo");
+        System.out.println("Desenhando Soldado");
     };
     
     public void correr(){

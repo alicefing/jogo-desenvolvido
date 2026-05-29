@@ -1,11 +1,11 @@
 package Jogo;
 
 import Personagens.Personagem;
-import Personagens.Soldado;
-import Personagens.General;
-import Personagens.Mago;
-import Personagens.LutSUMO;
-import Personagens.DragaoAlado;
+import Personagens.Terrestre.Soldado;
+import Personagens.Terrestre.General;
+import Personagens.Terrestre.Mago;
+import Personagens.Terrestre.LutSUMO;
+import Personagens.Voador.DragaoAlado;
 
 import Arma.Armafisica.Faca;
 import Arma.Armamistica.Fogo;
