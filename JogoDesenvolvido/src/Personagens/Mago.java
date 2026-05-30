@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Personagens.Terrestre;
+package Personagens;
 
 import Personagens.Personagem;
 import Personagens.Habilidades.UsaMagia;
 import Personagens.Habilidades.Fala;
 import Personagens.Voador.VoadorIF;
+import Personagens.Terrestre.TerrestreIF;
 import Personagens.Terrestre.TerrestreIF;
 
 /**

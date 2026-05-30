@@ -4,14 +4,14 @@
  */
 package Arma.Armafisica;
 
-import Arma.Armafisica.Armafisica;
+import Arma.Armafisica.ArmafisicaIF;
 import Jogo.InOut;
 
 /**
  *
  * @author alicefingiro
  */
-public class Faca extends Armafisica  {
+public class Faca extends ArmafisicaIF  {
  
     public Faca(){
         super("Faca", 50);

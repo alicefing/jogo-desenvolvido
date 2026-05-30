@@ -3,7 +3,7 @@ package Jogo;
 import Personagens.Personagem;
 import Personagens.Terrestre.Soldado;
 import Personagens.Terrestre.General;
-import Personagens.Terrestre.Mago;
+import Personagens.Mago;
 import Personagens.Terrestre.LutSUMO;
 import Personagens.Voador.DragaoAlado;
 
@@ -19,7 +19,6 @@ public class Jogo {
 
     private Personagem jogador;
     private Arma arma;
-    private int dano;
 
     public void historiaInicial() {
 
@@ -99,7 +98,6 @@ public class Jogo {
             case 1:
 
                 arma = new Faca();
-                dano = 10;
 
                 InOut.MsgDeInformacao(
                     "Arma",
@@ -110,7 +108,6 @@ public class Jogo {
             case 2:
 
                 arma = new Revolver();
-                dano = 60;
 
                 InOut.MsgDeInformacao(
                     "Revolver",
@@ -121,7 +118,6 @@ public class Jogo {
             case 3:
 
                 arma = new Fuzil();
-                dano = 150;
 
                 InOut.MsgDeInformacao(
                     "Arma",
@@ -140,7 +136,7 @@ public class Jogo {
     
  
 
-    public void batalha() {
+    public void partida() {
 
         int vidaJogador = 200;
         int vidaDragao = 250;
@@ -155,47 +151,26 @@ public class Jogo {
             "Você começa com 200 de vida!"
         );
 
+        
+
+        if (vidaJogador <= 0) {
+
+            InOut.MsgDeInformacao(
+                "Derrota",
+                "O dragão venceu!"
+            );
+        }
+    }
+    
+    public void batalha(){
+        
         while (vidaJogador > 0 && vidaDragao > 0) {
 
             int chanceErro = (int)(Math.random() * 100);
 
-            if (chanceErro < 20) {
+            
 
-                InOut.MsgDeInformacao(
-                    "Erro",
-                    "Você errou o ataque!"
-                    //o dragao voou 
-                );
-
-            } else {
-
-                arma.usarArma();
-
-                vidaDragao -= dano;
-
-                InOut.MsgDeInformacao(
-                    "Ataque",
-                    "Você causou " + dano + " de dano!"
-                );
-
-                InOut.MsgDeInformacao(
-                    "Dragão",
-                    "Vida do dragão: " + vidaDragao
-                );
-
-                
-                if (vidaDragao <= 0) {
-
-                    InOut.MsgDeInformacao(
-                        "Vitória",
-                        "Você derrotou o dragão!"
-                    );
-
-                    return;
-                }
-            }
-
-            int ataqueDragao = (int)(Math.random() * 3) + 1;
+            int ataqueDragao = (int)(Math.random() * 29) + 15;
 
             vidaJogador -= ataqueDragao;
 
@@ -235,14 +210,6 @@ public class Jogo {
 
                 escolherArma();
             }
-        }
-
-        if (vidaJogador <= 0) {
-
-            InOut.MsgDeInformacao(
-                "Derrota",
-                "O dragão venceu!"
-            );
         }
     }
 

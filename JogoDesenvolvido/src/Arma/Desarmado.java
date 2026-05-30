@@ -4,7 +4,7 @@
  */
 package Arma;
 
-import Arma.Armafisica.Armafisica;
+import Arma.Armafisica.ArmafisicaIF;
 
 /**
  *

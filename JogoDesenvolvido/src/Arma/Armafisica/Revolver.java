@@ -4,14 +4,14 @@
  */
 package Arma.Armafisica;
 
-import Arma.Armafisica.Armafisica;
+import Arma.Armafisica.ArmafisicaIF;
 import Jogo.InOut;
 
 /**
  *
  * @author alicefingiro
  */
-public class Revolver extends Armafisica {
+public class Revolver extends ArmafisicaIF {
     
         public Revolver(){
         super("Revolver", 50);

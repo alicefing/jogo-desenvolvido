@@ -5,14 +5,14 @@
  */
 package Arma.Armafisica;
 
-import Arma.Armafisica.Armafisica;
+import Arma.Armafisica.ArmafisicaIF;
 import Jogo.InOut;
 
 /**
  *
  * @author alicefingiro
  */
-public class Fuzil extends Armafisica {
+public class Fuzil extends ArmafisicaIF {
     
         public Fuzil(){
         super("Fuzil", 50);

@@ -4,14 +4,14 @@
  */
 package Arma.Armamistica;
 
-import Arma.Armamistica.Armamistica;
+import Arma.Armamistica.ArmamisticaIF;
 import Jogo.InOut;
 
 /**
  *
  * @author alicefingiro
  */
-public class Magia extends Armamistica  {
+public class Magia extends ArmamisticaIF  {
     
      public Magia(){
         super("Magia", 200);
