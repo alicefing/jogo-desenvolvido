@@ -4,17 +4,17 @@
  */
 package Personagens.Terrestre;
 
-import Personagens.Voador.Voador;
 import Personagens.Personagem;
-import Personagens.Terrestre.Terrestre;
 import Personagens.Habilidades.UsaMagia;
 import Personagens.Habilidades.Fala;
+import Personagens.Voador.VoadorIF;
+import Personagens.Terrestre.TerrestreIF;
 
 /**
  *
  * @author alicefingiro
  */
-public class Mago extends Personagem implements Terrestre, Voador, UsaMagia, Fala{
+public class Mago extends Personagem implements TerrestreIF, VoadorIF, UsaMagia, Fala{
     
     public void desenhar(){
         System.out.println("Desenhando mago");

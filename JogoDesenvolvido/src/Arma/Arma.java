@@ -18,9 +18,6 @@ public abstract class Arma {
        this.dano = dano;
     }
 
-   void usarArma(){
-       //random
-       System.out.println("Usar arma");
-   }  
+    public abstract void usarArma(); 
     
 }

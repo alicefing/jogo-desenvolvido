@@ -15,7 +15,7 @@ public abstract class Personagem {
     
     public void arma(){
         arma.usarArma();
-    };
+    }
     
     public void setArma (Arma arma){
         this.arma = arma;

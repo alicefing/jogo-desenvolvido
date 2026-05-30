@@ -8,7 +8,7 @@ package Personagens.Voador;
  *
  * @author alicefingiro
  */
-public interface Voador {
+public interface VoadorIF {
     
     void voar();
 }

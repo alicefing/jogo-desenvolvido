@@ -8,7 +8,7 @@ package Personagens.Terrestre;
  *
  * @author alicefingiro
  */
-public interface Terrestre {
+public interface TerrestreIF {
     
     void correr();
 }

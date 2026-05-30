@@ -138,10 +138,7 @@ public class Jogo {
         }
     }
     
-    if (escolherJogador == General){
-        dano = dano revolver + 10%
-                
-    }
+ 
 
     public void batalha() {
 
