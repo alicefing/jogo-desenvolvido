@@ -46,11 +46,8 @@ public class Jogo {
             + "1 - Soldado\n"
             + "2 - General\n"
             + "3 - Lutador de Sumô\n"
-            + "4 - Mago\n"
-            + "5 - Dragão Alado"
+            
         );
-        
-        
         
         switch (opcao) {
 
@@ -81,24 +78,6 @@ public class Jogo {
                 );
             }
 
-            case 4 -> {
-                jogador = new Mago();
-
-                InOut.MsgDeInformacao(
-                        "Personagem",
-                        "Você escolheu o Mago!"
-                );
-            }
-
-            case 5 -> {
-                jogador = new DragaoAlado();
-
-                InOut.MsgDeInformacao(
-                        "Personagem",
-                        "Você escolheu o Dragão Alado!"
-                );
-            }
-
             default -> InOut.MsgDeInformacao(
                     "Erro",
                     "Opção inválida!"
@@ -111,11 +90,8 @@ public class Jogo {
         int opcao = InOut.leInt(
             "Escolha sua arma:\n"
             + "1 - Faca\n"
-            + "2 - Fogo\n"
-            + "3 - Revolver\n"
-            + "4 - Fuzil\n"
-            + "5 - Magia\n"
-            + "6 - Desarmado"
+            + "2 - Revolver\n"
+            + "3 - Fuzil\n"
         );
 
         switch (opcao) {
@@ -133,27 +109,16 @@ public class Jogo {
 
             case 2:
 
-                arma = new Fogo();
+                arma = new Revolver();
                 dano = 60;
 
                 InOut.MsgDeInformacao(
-                    "Arma",
-                    "Você escolheu o Fogo!"
-                );
-                break;
-
-            case 3:
-
-                arma = new Revolver();
-                dano = 100;
-
-                InOut.MsgDeInformacao(
-                    "Arma",
+                    "Revolver",
                     "Você escolheu o Revolver!"
                 );
                 break;
 
-            case 4:
+            case 3:
 
                 arma = new Fuzil();
                 dano = 150;
@@ -161,28 +126,6 @@ public class Jogo {
                 InOut.MsgDeInformacao(
                     "Arma",
                     "Você escolheu o Fuzil!"
-                );
-                break;
-
-            case 5:
-
-                arma = new Magia();
-                dano = 20;
-
-                InOut.MsgDeInformacao(
-                    "Arma",
-                    "Você escolheu a Magia!"
-                );
-                break;
-
-            case 6:
-
-                arma = new Desarmado();
-                dano = 0;
-
-                InOut.MsgDeInformacao(
-                    "Arma",
-                    "Você ficou desarmado!"
                 );
                 break;
 
@@ -194,11 +137,13 @@ public class Jogo {
                 );
         }
     }
+    
+ 
 
     public void batalha() {
 
-        int vidaJogador = 8;
-        int vidaDragao = 150;
+        int vidaJogador = 200;
+        int vidaDragao = 250;
 
         InOut.MsgDeInformacao(
             "Batalha",
@@ -207,12 +152,10 @@ public class Jogo {
 
         InOut.MsgDeInformacao(
             "Batalha",
-            "Você começa com 8 vidas!"
+            "Você começa com 200 de vida!"
         );
 
         while (vidaJogador > 0 && vidaDragao > 0) {
-
-            
 
             int chanceErro = (int)(Math.random() * 100);
 

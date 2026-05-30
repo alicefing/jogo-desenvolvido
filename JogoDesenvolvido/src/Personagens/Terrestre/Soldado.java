@@ -5,14 +5,14 @@
 package Personagens.Terrestre;
 
 import Personagens.Personagem;
-import Personagens.Terrestre.Terrestre;
 import Personagens.Habilidades.Fala;
+import Personagens.Terrestre.TerrestreIF;
 
 /**
  *
  * @author alicefingiro
  */
-public class Soldado extends Personagem implements Terrestre, Fala {
+public class Soldado extends Personagem implements TerrestreIF, Fala {
     
     public void desenhar(){
         System.out.println("Desenhando Soldado");

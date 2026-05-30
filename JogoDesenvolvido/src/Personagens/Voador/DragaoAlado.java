@@ -12,7 +12,7 @@ import Personagens.Habilidades.SoltaFogo;
  *
  * @author alicefingiro
  */
-public class DragaoAlado extends Personagem implements Voador, SoltaFogo{
+public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
     
     public void desenhar(){
         System.out.println("Desenhando dragao");
