@@ -14,7 +14,7 @@ import Jogo.InOut;
 public class Magia extends Armamistica  {
     
      public Magia(){
-        super("MAGIA", 50);
+        super("Magia", 200);
     }
     
     
