@@ -41,7 +41,7 @@ public class Jogo {
     }
 
     public void escolherJogador() {
-
+        
          int opcao = InOut.leInt(
             "Escolha seu personagem:\n"
             + "1 - Soldado\n"
