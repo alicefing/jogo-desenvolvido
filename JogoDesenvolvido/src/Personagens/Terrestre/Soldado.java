@@ -5,6 +5,7 @@
 package Personagens.Terrestre;
 
 
+import Arma.Arma;
 import Arma.Armafisica.Revolver;
 import Personagens.Habilidades.Fala;
 
@@ -14,6 +15,11 @@ import Personagens.Habilidades.Fala;
  * @author alicefingiro
  */
 public class Soldado extends Terrestre implements Fala {
+
+    public Arma getArma() {
+        return arma;
+    }
+    
     
     public void desenhar(){
         System.out.println("Desenhando Soldado");
@@ -29,6 +35,10 @@ public class Soldado extends Terrestre implements Fala {
     
     public void perderVida(int dano) {
         vidaTerrestre -= dano;
+    }
+    
+    public void usarArma(){
+        getArma().usarArma();
     }
 
     public int getVidaTerrestre() {

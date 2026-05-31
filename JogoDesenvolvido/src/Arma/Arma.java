@@ -18,6 +18,6 @@ public abstract class Arma {
        this.dano = dano;
     }
 
-    public abstract void usarArma(); 
+    public abstract int usarArma(); 
     
 }

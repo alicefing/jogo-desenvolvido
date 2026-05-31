@@ -18,7 +18,10 @@ public class Fuzil extends ArmafisicaIF {
         super("Fuzil", 50);
     }
     
-    public void usarArma(){
-        InOut.MsgDeInformacao("Ataque", "Fuziiil BOOM");       
+    public int usarArma(){
+        InOut.MsgDeInformacao("Ataque", "Atirando puf puf");  
+        int ataquePersonagem = (int)(Math.random() * 16) + 15;
+        
+        return ataquePersonagem;
     };
 }

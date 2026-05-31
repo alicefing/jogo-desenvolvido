@@ -17,7 +17,10 @@ public class Revolver extends ArmafisicaIF {
         super("Revolver", 50);
     }
     
-    public void usarArma(){
-        InOut.MsgDeInformacao("Ataque", "Atirando puf puf");        
+    public int usarArma(){
+        InOut.MsgDeInformacao("Ataque", "Atirando puf puf");  
+        int ataquePersonagem = (int)(Math.random() * 16) + 15;
+        
+        return ataquePersonagem;
     };
 }

@@ -16,7 +16,11 @@ public class Desarmado extends Arma{
         super("Desarmado", 0);
     }
     
-    public void usarArma(){
-        System.out.println("Sem arma");        
+    public int usarArma(){
+        System.out.println("Sem arma"); 
+        
+        int un = 1;
+        
+        return un;
     };
 }

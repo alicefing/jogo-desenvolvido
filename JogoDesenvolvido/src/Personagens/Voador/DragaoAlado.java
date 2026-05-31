@@ -5,14 +5,13 @@
 package Personagens.Voador;
 
 import Personagens.Personagem;
-import Personagens.Habilidades.SoltaFogo;
 
 
 /**
  *
  * @author alicefingiro
  */
-public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
+public class DragaoAlado extends Personagem implements VoadorIF{
     
     int vidasDragao = 200;
     
@@ -23,13 +22,6 @@ public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
     
     public void voar(){
         System.out.println("Batendo minhas asas");
-    }
-    
-    public void Fogo
-    
-    public void soltarBolaDeFogo(){
-     
-        System.out.println("FOGO!");
     }
     
     public void perderVida(int dano){

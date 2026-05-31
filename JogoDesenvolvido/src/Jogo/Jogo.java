@@ -12,16 +12,15 @@ import Arma.Armafisica.Faca;
 import Arma.Armamistica.Fogo;
 import Arma.Armafisica.Revolver;
 import Arma.Armafisica.Fuzil;
-import Arma.Armamistica.Magia;
 import Arma.Desarmado;
 import Arma.Arma;
 
 public class Jogo {
 
     private Terrestre jogador;
-    private Arma arma;
     
     private DragaoAlado dragao = new DragaoAlado();
+    
 
     public void historiaInicial() {
 
@@ -88,6 +87,9 @@ public class Jogo {
     }
 
     public void escolherArma() {
+        
+        //set fogo para dragao
+        dragao.setArma(new Fogo());
 
         int opcao = InOut.leInt(
             "Escolha sua arma:\n"
@@ -100,7 +102,7 @@ public class Jogo {
 
             case 1:
 
-                arma = new Faca();
+                jogador.setArma(new Faca());
 
                 InOut.MsgDeInformacao(
                     "Arma",
@@ -110,7 +112,7 @@ public class Jogo {
 
             case 2:
 
-                arma = new Revolver();
+                jogador.setArma(new Revolver());
 
                 InOut.MsgDeInformacao(
                     "Revolver",
@@ -120,7 +122,7 @@ public class Jogo {
 
             case 3:
 
-                arma = new Fuzil();
+                jogador.setArma(new Fuzil());
 
                 InOut.MsgDeInformacao(
                     "Arma",
@@ -186,7 +188,7 @@ public class Jogo {
                 
                 case 1 -> {
                     
-                    int ataquePersonagem = (int)(Math.random() * 16) + 15;
+                    int ataquePersonagem = jogador.getArma().usarArma();
                     
                     ataquePersonagem = jogador.calcularDano(ataquePersonagem);
                     dragao.perderVida(ataquePersonagem);
@@ -223,7 +225,7 @@ public class Jogo {
                 
                 case 1 ->  {
                 
-                    int ataqueDragao = (int)(Math.random() * 16) + 15;
+                       int ataqueDragao = dragao.getArma().usarArma();
                        jogador.perderVida(ataqueDragao);
                        
                     InOut.MsgDeInformacao(

@@ -17,7 +17,10 @@ public class Faca extends ArmafisicaIF  {
         super("Faca", 50);
     }
     
-    public void usarArma(){
+    public int usarArma(){
         InOut.MsgDeInformacao("Ataque", "Esfaqueando zip zip");
+        int ataquePersonagem = (int)(Math.random() * 16) + 15;
+        
+        return ataquePersonagem;
     }
 }
