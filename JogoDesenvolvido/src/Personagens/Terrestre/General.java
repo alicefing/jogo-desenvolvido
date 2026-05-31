@@ -4,15 +4,14 @@
  */
 package Personagens.Terrestre;
 
-import Personagens.Personagem;
+import Arma.Armafisica.Fuzil;
 import Personagens.Habilidades.Fala;
-import Personagens.Terrestre.TerrestreIF;
 
 /**
  *
  * @author alicefingiro
  */
-public class General extends Personagem implements TerrestreIF, Fala{
+public class General extends Terrestre implements Fala{
     
     public void desenhar(){
         System.out.println("Desenhando General");
@@ -25,4 +24,16 @@ public class General extends Personagem implements TerrestreIF, Fala{
     public void falar(){
         System.out.println("Eu sou o General");
     }
+    
+    public int calcularDano(int dano) {
+
+        int danoFinal = dano;
+
+        if (arma instanceof Fuzil) {
+            danoFinal += 15;
+        }
+
+        return danoFinal;
+    }
+    
 }

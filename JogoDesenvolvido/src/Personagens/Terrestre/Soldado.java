@@ -4,15 +4,16 @@
  */
 package Personagens.Terrestre;
 
-import Personagens.Personagem;
-import Personagens.Habilidades.Fala;
-import Personagens.Terrestre.TerrestreIF;
 
+import Arma.Armafisica.Revolver;
+import Personagens.Habilidades.Fala;
+
+ 
 /**
  *
  * @author alicefingiro
  */
-public class Soldado extends Personagem implements TerrestreIF, Fala {
+public class Soldado extends Terrestre implements Fala {
     
     public void desenhar(){
         System.out.println("Desenhando Soldado");
@@ -24,5 +25,16 @@ public class Soldado extends Personagem implements TerrestreIF, Fala {
     
     public void falar(){
         System.out.println("Eu sou o Soldado");
+    }
+    
+    public int calcularDano(int dano) {
+
+        int danoFinal = dano;
+
+        if (arma instanceof Revolver) {
+            danoFinal += 15;
+        }
+
+        return danoFinal;
     }
 }
