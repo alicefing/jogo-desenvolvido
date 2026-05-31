@@ -8,12 +8,12 @@ package Jogo;
  *
  * @author alicefingiro
  */
-public class excecaoLetra extends Exception {
+public class excecaoRessurreircao extends Exception {
     
     @Override
     public String toString(){
         
-        return "Digite um número da sua escolha";
+        return "O mago já utilizou sua magia de ressurreição.";
         
     }
 }

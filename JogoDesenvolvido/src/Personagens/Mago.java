@@ -4,12 +4,9 @@
  */
 package Personagens;
 
-import Personagens.Personagem;
 import Personagens.Habilidades.UsaMagia;
 import Personagens.Habilidades.Fala;
-import Personagens.Voador.VoadorIF;
-import Personagens.Terrestre.Terrestre;
-import Personagens.Terrestre.Terrestre;
+
 
 /**
  *
