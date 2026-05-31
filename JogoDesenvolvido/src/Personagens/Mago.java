@@ -4,7 +4,6 @@
  */
 package Personagens;
 
-import Personagens.Habilidades.UsaMagia;
 import Personagens.Habilidades.Fala;
 import Jogo.MagiaEsgotadaException;
 
