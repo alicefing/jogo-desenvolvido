@@ -6,13 +6,13 @@ package Personagens.Terrestre;
 
 import Personagens.Personagem;
 import Personagens.Habilidades.Fala;
-import Personagens.Terrestre.TerrestreIF;
+import Personagens.Terrestre.Terrestre;
 
 /**
  *
  * @author alicefingiro
  */
-public class LutSUMO extends Personagem implements TerrestreIF, Fala{
+public class LutSUMO extends Terrestre implements Fala{
     
     public void desenhar(){
         System.out.println("Desenhando LutSumo");
