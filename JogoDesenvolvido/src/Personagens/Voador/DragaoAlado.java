@@ -14,6 +14,8 @@ import Personagens.Habilidades.SoltaFogo;
  */
 public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
     
+    int vidasDragao = 200;
+    
     public void desenhar(){
         System.out.println("Desenhando dragao");
                 
@@ -26,6 +28,15 @@ public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
     public void soltarBolaDeFogo(){
         System.out.println("FOGO!");
     }
+    
+    public void perderVida(int dano){
+        vidasDragao -= dano;
+    }
+
+    public int getVidasDragao() {
+        return vidasDragao;
+    }
         
+    
     
 }

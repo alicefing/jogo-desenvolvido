@@ -25,6 +25,15 @@ public class LutSUMO extends Terrestre implements Fala{
         System.out.println("Eu sou o Lutador de Sumo");
     }
     
+    public void perderVida(int dano) {
+        vidaTerrestre -= dano;
+    }
+
+    public int getVidaTerrestre() {
+        return vidaTerrestre;
+    }
+    
+    
     public int calcularDano(int dano) {
 
         int danoFinal = dano;
