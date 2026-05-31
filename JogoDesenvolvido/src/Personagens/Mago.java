@@ -13,7 +13,7 @@ import Jogo.MagiaEsgotadaException;
  *
  * @author alicefingiro
  */
-public class Mago extends Personagem implements UsaMagia, Fala{
+public class Mago extends Personagem implements Fala{
     
     private boolean magiaUsada = false;
     
