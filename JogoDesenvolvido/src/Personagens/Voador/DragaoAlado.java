@@ -4,6 +4,7 @@
  */
 package Personagens.Voador;
 
+import Jogo.InOut;
 import Personagens.Personagem;
 
 
@@ -13,7 +14,7 @@ import Personagens.Personagem;
  */
 public class DragaoAlado extends Personagem implements VoadorIF{
     
-    int vidasDragao = 200;
+    int vidasDragao = 50;
     
     public void desenhar(){
         System.out.println("Desenhando dragao");
@@ -21,7 +22,7 @@ public class DragaoAlado extends Personagem implements VoadorIF{
     }
     
     public void voar(){
-        System.out.println("O dragão voo");
+        InOut.MsgDeInformacao("Dragão", "O dragão voou");
     }
     
     public void perderVida(int dano){

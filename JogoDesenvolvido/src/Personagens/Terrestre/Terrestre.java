@@ -7,7 +7,7 @@ public abstract class Terrestre extends Personagem {
     protected int vidaTerrestre;
 
     public Terrestre() {
-        this.vidaTerrestre = 200;
+        this.vidaTerrestre = 50;
     }
 
     public int getVida() {
