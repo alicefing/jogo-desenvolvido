@@ -25,6 +25,15 @@ public class General extends Terrestre implements Fala{
         System.out.println("Eu sou o General");
     }
     
+    public void perderVida(int dano) {
+        vidaTerrestre -= dano;
+    }
+
+    public int getVidaTerrestre() {
+        return vidaTerrestre;
+    }
+    
+    
     public int calcularDano(int dano) {
 
         int danoFinal = dano;

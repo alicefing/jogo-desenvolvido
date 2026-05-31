@@ -29,7 +29,7 @@ public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
         System.out.println("FOGO!");
     }
     
-    public void vidaDragao(int dano){
+    public void perderVida(int dano){
         vidasDragao -= dano;
     }
 

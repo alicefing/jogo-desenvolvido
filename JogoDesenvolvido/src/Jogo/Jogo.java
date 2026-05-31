@@ -1,6 +1,7 @@
 package Jogo;
 
 import Personagens.Personagem;
+import Personagens.Terrestre.Terrestre;
 import Personagens.Terrestre.Soldado;
 import Personagens.Terrestre.General;
 import Personagens.Mago;
@@ -17,10 +18,10 @@ import Arma.Arma;
 
 public class Jogo {
 
-    private Personagem jogador;
+    private Terrestre jogador;
     private Arma arma;
     
-    DragaoAlado dragao = new DragaoAlado();
+    private DragaoAlado dragao = new DragaoAlado();
 
     public void historiaInicial() {
 
@@ -166,58 +167,98 @@ public class Jogo {
         
         int rodadas = 0;
         
-        while (vidaJogador > 0 && vidaDragao > 0) {
+        while (jogador.getVida() > 0 && dragao.getVidasDragao() > 0) {
             
             ++rodadas;
-            int chanceErro = (int)(Math.random() * 100);
-
             
-
-            int ataqueDragao = (int)(Math.random() * 16) + 15;
-            vidaJogador -= ataqueDragao;
+           
             
-            //ataque personagem
-            int ataquePersonagem = (int)(Math.random() * 16) + 15;
-            dragao.vidaDragao(ataquePersonagem);
-            InOut.MsgDeInformacao("vidas", "Vida do dragao:" + dragao.getVidasDragao());
-
-            InOut.MsgDeInformacao(
-                "Dragão",
-                "O dragão atacou e tirou "
-                + ataqueDragao + " vidas!"
-            );
-
-            InOut.MsgDeInformacao(
-                "Jogador",
-                "Vida restante: " + vidaJogador
-            );
-
-            if (vidaJogador == 5) {
-
-                String fugir;
-
-                fugir = InOut.leString(
-                    "Você quer fugir e abandonar a batalha? (s/n)"
-                );
-
-                if (fugir.equalsIgnoreCase("s")) {
-
-                    InOut.MsgDeInformacao(
-                        "Fuga",
-                        "Você fugiu da batalha!"
-                    );
-
-                    return;
+            switch(chanceErro) {
+                
+                //se ele acertar 
+                case 1 -> {
+                    ataque();
+                } 
+                
+                case 2 -> {
+                    
                 }
+            }
+            
+            
 
-                InOut.MsgDeInformacao(
-                    "Troca de arma",
-                    "Você chegou a 5 vidas! Escolha outra arma."
-                );
-
-                escolherArma();
+            if (rodadas == 3) {
+                
+                
+                
             }
         }
+    }
+    
+    public void ataquePersonagem(){
+        
+         int chanceErroJogador, chanceErroDragao;
+         
+        //ataque do dragao
+        
+            chanceErroDragao = (int)(Math.random() * 2) + 1;
+            
+            switch(chanceErroDragao){
+                
+                case 1 ->  {
+                
+                    int ataqueDragao = (int)(Math.random() * 16) + 15;
+                       jogador.perderVida(ataqueDragao);
+                       
+                    InOut.MsgDeInformacao(
+                        "Dragão",
+                        "O dragão atacou e tirou "
+                        + ataqueDragao + " vidas!"
+                    );
+            
+            }
+                case 2 -> {
+                    
+                    InOut.MsgDeInformacao("Errou", "O dragão errou o ataque!!");
+                    jogador.correr();
+                }
+                
+            
+            }
+
+            
+            //ataque do personagem
+            
+            chanceErroJogador = (int)(Math.random() * 2) + 1;
+            
+            switch(chanceErroJogador){
+                
+                case 1 -> {
+                    
+                    int ataquePersonagem = (int)(Math.random() * 16) + 15;
+                    ataquePersonagem = jogador.calcularDano(ataquePersonagem);
+                    dragao.perderVida(ataquePersonagem);
+                    
+                    InOut.MsgDeInformacao("vidas", "Seu ataque foi de " + ataquePersonagem + 
+                            "\nVida do dragao:" + dragao.getVidasDragao());
+                    
+                    InOut.MsgDeInformacao(
+                            "Jogador",
+                            "Vida restante: " + jogador.getVida()
+            );
+        
+
+                    }
+            
+            
+                case 2 -> {
+                
+                InOut.MsgDeInformacao("Errou", "Você errou o ataque!!");
+                dragao.voar();
+                }
+                
+    } 
+            
     }
 
 }

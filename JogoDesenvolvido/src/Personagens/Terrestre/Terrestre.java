@@ -18,8 +18,8 @@ public abstract class Terrestre extends Personagem {
         this.vidaTerrestre = vida;
     }
 
-    public void perderVida(int quantidade) {
-        vidaTerrestre -= quantidade;
+    public void perderVida(int dano) {
+        vidaTerrestre -= dano;
     }
 
     public abstract void correr();
