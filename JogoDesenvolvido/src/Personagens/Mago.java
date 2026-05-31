@@ -6,6 +6,7 @@ package Personagens;
 
 import Personagens.Habilidades.UsaMagia;
 import Personagens.Habilidades.Fala;
+import Jogo.MagiaEsgotadaException;
 
 
 /**
@@ -13,6 +14,8 @@ import Personagens.Habilidades.Fala;
  * @author alicefingiro
  */
 public class Mago extends Personagem implements UsaMagia, Fala{
+    
+    private boolean magiaUsada = false;
     
     public void desenhar(){
         System.out.println("Desenhando mago");
@@ -27,7 +30,14 @@ public class Mago extends Personagem implements UsaMagia, Fala{
         System.out.println("Eu sou o Mago");
     }
     
-    
+    public void reviver() throws MagiaEsgotadaException{ // metodo lancador de exception
+        //se ela ja foi usada lanca a exception
+        if (magiaUsada){
+            throw new MagiaEsgotadaException();
+        }
+        
+        magiaUsada = true;
+    }
 
 }
     

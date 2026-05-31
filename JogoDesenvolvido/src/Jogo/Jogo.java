@@ -20,7 +20,7 @@ public class Jogo {
 
     private Terrestre jogador;
     private Arma arma;
-    
+    private Mago mago = new Mago();
     private DragaoAlado dragao = new DragaoAlado();
 
     public void historiaInicial() {
@@ -158,8 +158,7 @@ public class Jogo {
     
     public void batalha(){
         
-        boolean renascer = false;
-        
+              
         while (jogador.getVida() > 0 && dragao.getVidasDragao() > 0) {
             
             
@@ -167,12 +166,37 @@ public class Jogo {
             ataquePersonagem();
             
             if(jogador.getVida() == 0){
-                renascer = true;
                 
+            try{    
+                mago.reviver();
+                InOut.MsgDeInformacao(
+                    "Mago",
+                    "O mago usou sua magia e reviveu você!"
+                );
+
+                jogador.setVida(200);
+                
+                int opcao = InOut.leInt(
+                    "1 - Continuar com o mesmo personagem\n"
+                    + "2 - Escolher outro personagem"
+                );
+
+                if (opcao == 2) {
+                    escolherJogador();
+                    escolherArma();
+                }
+
+            } catch (MagiaEsgotadaException e) {
+
+                InOut.MsgDeInformacao(
+                    "Fim de Jogo",
+                    e.getMessage()
+                );
+                
+                return;
             }
-           
-            
-            
+        } 
+                      
         }
     }
     
