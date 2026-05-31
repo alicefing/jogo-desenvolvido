@@ -32,6 +32,11 @@ public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
     public void vidaDragao(int dano){
         vidasDragao -= dano;
     }
+
+    public int getVidasDragao() {
+        return vidasDragao;
+    }
         
+    
     
 }

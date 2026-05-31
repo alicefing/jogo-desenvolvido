@@ -19,6 +19,8 @@ public class Jogo {
 
     private Personagem jogador;
     private Arma arma;
+    
+    DragaoAlado dragao = new DragaoAlado();
 
     public void historiaInicial() {
 
@@ -138,8 +140,6 @@ public class Jogo {
 
     public void partida() {
 
-        int vidaJogador = 200;
-        int vidaDragao = 250;
 
         InOut.MsgDeInformacao(
             "Batalha",
@@ -176,8 +176,10 @@ public class Jogo {
             int ataqueDragao = (int)(Math.random() * 16) + 15;
             vidaJogador -= ataqueDragao;
             
+            //ataque personagem
             int ataquePersonagem = (int)(Math.random() * 16) + 15;
-            vidaDragao -= ataquePersonagem; 
+            dragao.vidaDragao(ataquePersonagem);
+            InOut.MsgDeInformacao("vidas", "Vida do dragao:" + dragao.getVidasDragao());
 
             InOut.MsgDeInformacao(
                 "Dragão",
