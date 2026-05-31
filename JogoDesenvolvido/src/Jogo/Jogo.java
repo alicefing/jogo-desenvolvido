@@ -164,15 +164,20 @@ public class Jogo {
     
     public void batalha(){
         
+        int rodadas = 0;
+        
         while (vidaJogador > 0 && vidaDragao > 0) {
-
+            
+            ++rodadas;
             int chanceErro = (int)(Math.random() * 100);
 
             
 
-            int ataqueDragao = (int)(Math.random() * 29) + 15;
-
+            int ataqueDragao = (int)(Math.random() * 16) + 15;
             vidaJogador -= ataqueDragao;
+            
+            int ataquePersonagem = (int)(Math.random() * 16) + 15;
+            vidaDragao -= ataquePersonagem; 
 
             InOut.MsgDeInformacao(
                 "Dragão",
