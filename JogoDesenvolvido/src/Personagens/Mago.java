@@ -28,7 +28,7 @@ public class Mago extends Personagem implements UsaMagia, Fala{
     }
     
     
-    
+
 }
     
 

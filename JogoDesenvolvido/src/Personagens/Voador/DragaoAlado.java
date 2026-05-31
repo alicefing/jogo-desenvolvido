@@ -25,7 +25,10 @@ public class DragaoAlado extends Personagem implements VoadorIF, SoltaFogo{
         System.out.println("Batendo minhas asas");
     }
     
+    public void Fogo
+    
     public void soltarBolaDeFogo(){
+     
         System.out.println("FOGO!");
     }
     

@@ -153,89 +153,41 @@ public class Jogo {
         );
 
         
-
-        if (vidaJogador <= 0) {
-
-            InOut.MsgDeInformacao(
-                "Derrota",
-                "O dragão venceu!"
-            );
-        }
+        batalha();
     }
     
     public void batalha(){
         
-        int rodadas = 0;
+        boolean renascer = false;
         
         while (jogador.getVida() > 0 && dragao.getVidasDragao() > 0) {
             
-            ++rodadas;
             
+            ataqueDragao();
+            ataquePersonagem();
+            
+            if(jogador.getVida() == 0){
+                renascer = true;
+                
+            }
            
             
-            switch(chanceErro) {
-                
-                //se ele acertar 
-                case 1 -> {
-                    ataque();
-                } 
-                
-                case 2 -> {
-                    
-                }
-            }
             
-            
-
-            if (rodadas == 3) {
-                
-                
-                
-            }
         }
     }
     
     public void ataquePersonagem(){
-        
-         int chanceErroJogador, chanceErroDragao;
-         
-        //ataque do dragao
-        
-            chanceErroDragao = (int)(Math.random() * 2) + 1;
-            
-            switch(chanceErroDragao){
                 
-                case 1 ->  {
-                
-                    int ataqueDragao = (int)(Math.random() * 16) + 15;
-                       jogador.perderVida(ataqueDragao);
-                       
-                    InOut.MsgDeInformacao(
-                        "Dragão",
-                        "O dragão atacou e tirou "
-                        + ataqueDragao + " vidas!"
-                    );
-            
-            }
-                case 2 -> {
-                    
-                    InOut.MsgDeInformacao("Errou", "O dragão errou o ataque!!");
-                    jogador.correr();
-                }
-                
-            
-            }
-
-            
             //ataque do personagem
             
-            chanceErroJogador = (int)(Math.random() * 2) + 1;
+            int chanceErroJogador = (int)(Math.random() * 2) + 1;
             
             switch(chanceErroJogador){
                 
                 case 1 -> {
                     
                     int ataquePersonagem = (int)(Math.random() * 16) + 15;
+                    
                     ataquePersonagem = jogador.calcularDano(ataquePersonagem);
                     dragao.perderVida(ataquePersonagem);
                     
@@ -253,12 +205,44 @@ public class Jogo {
             
                 case 2 -> {
                 
+                dragao.voar();    
                 InOut.MsgDeInformacao("Errou", "Você errou o ataque!!");
-                dragao.voar();
                 }
                 
     } 
             
+    }
+    
+    public void ataqueDragao(){
+        
+        //ataque do dragao
+        
+           int chanceErroDragao = (int)(Math.random() * 2) + 1;
+            
+            switch(chanceErroDragao){
+                
+                case 1 ->  {
+                
+                    int ataqueDragao = (int)(Math.random() * 16) + 15;
+                       jogador.perderVida(ataqueDragao);
+                       
+                    InOut.MsgDeInformacao(
+                        "Dragão",
+                        "O dragão atacou e tirou "
+                        + ataqueDragao + " vidas!"
+                    );
+            
+            }
+                case 2 -> {
+                    
+                    jogador.correr();                    
+                    InOut.MsgDeInformacao("Errou", "O dragão errou o ataque!!");
+
+                }
+                
+            
+            }
+        
     }
 
 }
