@@ -4,9 +4,8 @@
  */
 package Personagens.Terrestre;
 
-import Personagens.Personagem;
+import Arma.Armafisica.Faca;
 import Personagens.Habilidades.Fala;
-import Personagens.Terrestre.Terrestre;
 
 /**
  *
@@ -24,5 +23,16 @@ public class LutSUMO extends Terrestre implements Fala{
     
     public void falar(){
         System.out.println("Eu sou o Lutador de Sumo");
+    }
+    
+    public int calcularDano(int dano) {
+
+        int danoFinal = dano;
+
+        if (arma instanceof Faca) {
+            danoFinal += 15;
+        }
+
+        return danoFinal;
     }
 }

@@ -4,10 +4,11 @@
  */
 package Personagens.Terrestre;
 
-import Personagens.Personagem;
-import Personagens.Habilidades.Fala;
-import Personagens.Terrestre.Terrestre;
 
+import Arma.Armafisica.Revolver;
+import Personagens.Habilidades.Fala;
+
+ 
 /**
  *
  * @author alicefingiro
@@ -24,5 +25,16 @@ public class Soldado extends Terrestre implements Fala {
     
     public void falar(){
         System.out.println("Eu sou o Soldado");
+    }
+    
+    public int calcularDano(int dano) {
+
+        int danoFinal = dano;
+
+        if (arma instanceof Revolver) {
+            danoFinal += 15;
+        }
+
+        return danoFinal;
     }
 }

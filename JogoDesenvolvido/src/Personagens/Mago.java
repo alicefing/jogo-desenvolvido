@@ -15,19 +15,11 @@ import Personagens.Terrestre.Terrestre;
  *
  * @author alicefingiro
  */
-public class Mago extends Personagem implements Terrestre, VoadorIF, UsaMagia, Fala{
+public class Mago extends Personagem implements UsaMagia, Fala{
     
     public void desenhar(){
         System.out.println("Desenhando mago");
                 
-    }
-    
-    public void correr(){
-        System.out.println("Correndo no chao");
-    }
-
-    public void voar(){
-        System.out.println("Voando como mago");
     }
     
     public void usarMagia(){

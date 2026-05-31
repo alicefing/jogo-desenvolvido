@@ -4,23 +4,25 @@ import Personagens.Personagem;
 
 public abstract class Terrestre extends Personagem {
 
-    protected int vida;
+    protected int vidaTerrestre;
 
     public Terrestre() {
-        this.vida = 5;
+        this.vidaTerrestre = 200;
     }
 
     public int getVida() {
-        return vida;
+        return vidaTerrestre;
     }
 
     public void setVida(int vida) {
-        this.vida = vida;
+        this.vidaTerrestre = vida;
     }
 
     public void perderVida(int quantidade) {
-        vida -= quantidade;
+        vidaTerrestre -= quantidade;
     }
 
     public abstract void correr();
+    
+    public abstract int calcularDano(int dano);
 }
