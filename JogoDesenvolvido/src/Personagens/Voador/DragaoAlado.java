@@ -21,7 +21,7 @@ public class DragaoAlado extends Personagem implements VoadorIF{
     }
     
     public void voar(){
-        System.out.println("Batendo minhas asas");
+        System.out.println("O dragão voo");
     }
     
     public void perderVida(int dano){
@@ -31,6 +31,7 @@ public class DragaoAlado extends Personagem implements VoadorIF{
     public int getVidasDragao() {
         return vidasDragao;
     }
+    
         
     
     

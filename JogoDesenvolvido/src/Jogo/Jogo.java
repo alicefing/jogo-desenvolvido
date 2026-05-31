@@ -18,6 +18,7 @@ import Arma.Arma;
 public class Jogo {
 
     private Terrestre jogador;
+    private Mago mago;
     
     private DragaoAlado dragao = new DragaoAlado();
     
@@ -160,21 +161,46 @@ public class Jogo {
     
     public void batalha(){
         
-        boolean renascer = false;
-        
+              
         while (jogador.getVida() > 0 && dragao.getVidasDragao() > 0) {
             
-            
+            boolean renascer = false;
             ataqueDragao();
             ataquePersonagem();
             
-            if(jogador.getVida() == 0){
+            if(jogador.getVida() <= 0){
                 renascer = true;
                 
+            try{    
+                mago.reviver();
+                InOut.MsgDeInformacao(
+                    "Mago",
+                    "O mago usou sua magia e reviveu você!"
+                );
+
+                jogador.setVida(200);
+                
+                int opcao = InOut.leInt(
+                    "1 - Continuar com o mesmo personagem\n"
+                    + "2 - Escolher outro personagem"
+                );
+
+                if (opcao == 2) {
+                    escolherJogador();
+                    escolherArma();
+                }
+
+            } catch (MagiaEsgotadaException e) {
+
+                InOut.MsgDeInformacao(
+                    "Fim de Jogo",
+                    e.getMessage()
+                );
+                
+                return;
             }
-           
-            
-            
+        } 
+                      
         }
     }
     
@@ -183,7 +209,7 @@ public class Jogo {
             //ataque do personagem
             
             int chanceErroJogador = (int)(Math.random() * 2) + 1;
-            
+
             switch(chanceErroJogador){
                 
                 case 1 -> {
@@ -193,14 +219,23 @@ public class Jogo {
                     ataquePersonagem = jogador.calcularDano(ataquePersonagem);
                     dragao.perderVida(ataquePersonagem);
                     
+                    if(dragao.getVidasDragao() <= 0){
+                        InOut.MsgDeInformacao("vidas", "Você derrotou o Dragão!");
+                     
+                    }
+                    else{
                     InOut.MsgDeInformacao("vidas", "Seu ataque foi de " + ataquePersonagem + 
-                            "\nVida do dragao:" + dragao.getVidasDragao());
+                            "\nVida do dragao:" + dragao.getVidasDragao());                        
+                    }
                     
+                    if(jogador.getVida() <= 0){
+                       InOut.MsgDeInformacao("vidas", "Você foi derrotado!");
+                    }
+                    else{
                     InOut.MsgDeInformacao(
                             "Jogador",
-                            "Vida restante: " + jogador.getVida()
-            );
-        
+                            "Sua vida restante : " + jogador.getVida());                       
+                    }
 
                     }
             
@@ -208,7 +243,7 @@ public class Jogo {
                 case 2 -> {
                 
                 dragao.voar();    
-                InOut.MsgDeInformacao("Errou", "Você errou o ataque!!");
+                InOut.MsgDeInformacao("Errou", "Você errou o ataque!!\n");
                 }
                 
     } 

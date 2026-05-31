@@ -5,6 +5,7 @@
 package Personagens.Terrestre;
 
 import Arma.Armafisica.Fuzil;
+import Jogo.InOut;
 import Personagens.Habilidades.Fala;
 
 /**
@@ -18,7 +19,7 @@ public class General extends Terrestre implements Fala{
     };
     
     public void correr(){
-        System.out.println("Correndo no chao");
+        InOut.MsgDeAviso("Run", "O Lutador correu do fogo");
     }
     
     public void falar(){

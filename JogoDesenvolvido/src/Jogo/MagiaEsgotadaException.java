@@ -8,7 +8,7 @@ package Jogo;
  *
  * @author alicefingiro
  */
-public class excecaoRessurreircao extends Exception {
+public class MagiaEsgotadaException extends Exception {
     
     @Override
     public String toString(){

@@ -7,6 +7,7 @@ package Personagens.Terrestre;
 
 import Arma.Arma;
 import Arma.Armafisica.Revolver;
+import Jogo.InOut;
 import Personagens.Habilidades.Fala;
 
  
@@ -26,7 +27,7 @@ public class Soldado extends Terrestre implements Fala {
     };
     
     public void correr(){
-        System.out.println("Correndo no chao");
+        InOut.MsgDeAviso("Run", "O Soldado correu do fogo");
     }
     
     public void falar(){
@@ -56,4 +57,5 @@ public class Soldado extends Terrestre implements Fala {
 
         return danoFinal;
     }
+    
 }
