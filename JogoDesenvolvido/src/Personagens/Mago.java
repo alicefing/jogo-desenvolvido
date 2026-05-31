@@ -27,6 +27,8 @@ public class Mago extends Personagem implements UsaMagia, Fala{
         System.out.println("Eu sou o Mago");
     }
     
+    
+    
 }
     
 
